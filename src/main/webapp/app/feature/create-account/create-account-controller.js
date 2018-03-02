@@ -1,31 +1,26 @@
 (function() {
 
-    var CreateController =  function(accountService, $log) {
+    var CreateController =  function(Dal, $log) {
         
-    	$log.log("CreateController Created");
+    	$log.log("createController Created");
     	var vm = this;
         vm.test = "creat page working"
-        vm.isHidden = false;
         
-        vm.hideTable = function()
-        {
-        	vm.isHidden = !vm.isHidden
-        };
-        
-        /*function init() {
-        	accountService.getAccounts().then(function (results) {
-           	vm.accounts = results;
-           	$log.log("In the account controller the value of the result promise is ");
-        	$log.log(JSON.stringify(vm.accounts));
+        vm.addAccount = function(newAccount) {
+            $log.log("The account to add is: " + newAccount);
+            $log.log(newAccount);
+            var accounToJson = JSON.stringify(newAccount);
+            $log.log(accounToJson);
+            Dal.saveAccount(newAccount).then(function (results) {
+                vm.accountAddMessage  = results;
+                $state.go('accounts');
             }, function (error) {
                 vm.error = true;
                 vm.errorMessage = error;
             });
-       }
-       
-       init();*/
+        };
             
     };
 
-    angular.module('accountApp').controller('createController', ['accountService','$log', CreateController]);
+    angular.module('accountApp').controller('createController', ['Dal','$log', CreateController]);
 }());

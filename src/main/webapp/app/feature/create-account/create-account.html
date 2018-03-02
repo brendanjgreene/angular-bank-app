@@ -1,8 +1,34 @@
 <div class="panel panel-default" ng-controller="createController as createCtrl">
 	    <div class="panel-heading">Create Accounts page</div>
 	    <div class="panel-body">
-   		{{createCtrl.test}}
+   		
+   		<form role="form">
+
+        <input id="firstNane" placeholder="Enter first Name" ng-model="account.firstName">
+
+        <input id="secondName" placeholder="Enter Second Name" ng-model="account.secomdName">
+
+        <input id="accountNumber" placeholder="Enter Account Number" ng-model="account.accoumtNumber">
+
+        <button type="submit" ng-click="createCtrl.addAccount(account)">Add Account</button>
+
+    </form>
+    <form role="form">
+                <div class="form-group">
+                    <label>First Name:</label>
+                    <input type="text" name="firstName" class="form-control" ng-model="account.firstName" required>
+                </div>
+                <div class="form-group">
+                    <label>Second Name:</label>
+                    <input type="text" name="secondName" class="form-control" ng-model="account.secomdName" required>
+                </div>
+                <div class="form-group">
+                    <label>Account Number:</label>
+                    <input type="text" name="accoumtNumber" class="form-control" ng-model="account.accoumtNumber" required>
+                </div>
+            
+                <button type="submit" class="btn btn-primary btn-lg" ng-click="createCtrl.addAccount(account)">Create Account</button>
+            </form>
    		
         </div>
 	</div>
-</div>
