@@ -11,6 +11,9 @@
         }).state("account", {
                 url: "/account",
                 templateUrl: "app/feature/account/account.html"
-        })
+        }).state("add-account", {
+            url: "/account/add",
+            templateUrl: "app/feature/create-account/create-account.html"
+    })
     });
 }());
