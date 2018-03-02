@@ -11,6 +11,11 @@
         	return accountDal.getAccounts();
         };
         
+        this.saveAccount = function(){
+        	$log.log("AccountService saveAccount");
+        	return accountDal.saveAccount();
+        };
+        
     }
     
     angular.module("accountApp").service("accountService", ['$log','accountDal', AccountService]);

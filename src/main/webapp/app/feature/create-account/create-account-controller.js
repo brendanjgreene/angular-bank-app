@@ -1,6 +1,8 @@
+"use strict";
+
 (function() {
 
-    var CreateController =  function(AccountDal, $log) {
+    var CreateController =  function(accountService, $log) {
         
     	$log.log("createController Created");
     	var vm = this;
@@ -11,9 +13,9 @@
             $log.log(newAccount);
             var accounToJson = JSON.stringify(newAccount);
             $log.log(accounToJson);
-            AccountDal.saveAccount(newAccount).then(function (results) {
+            accountService.saveAccount(accounToJson).then(function (results) {
+            	$log.log("hello");
                 vm.accountAddMessage  = results;
-                $state.go('accounts');
             }, function (error) {
                 vm.error = true;
                 vm.errorMessage = error;
@@ -22,5 +24,5 @@
             
     };
 
-    angular.module('accountApp').controller('createController', ['AccountDal','$log', CreateController]);
+    angular.module('accountApp').controller('createController', ['accountService','$log', CreateController]);
 }());

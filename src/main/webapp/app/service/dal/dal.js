@@ -20,6 +20,7 @@
 
                 POST: function (apiPath, itemToSave) {
                     var deferred = $q.defer();
+                    $log.log("Dal post");
                     $http(
                         {
                             method: "post",
@@ -40,6 +41,7 @@
 
                 PUT: function (apiPath, itemToSave) {
                     var deferred = $q.defer();
+                    $log.log("Dal put");
                     $http(
                         {
                             method: "put",
@@ -60,6 +62,7 @@
 
                 DELETE: function (apiPath, itemToDelete) {
                     var deferred = $q.defer();
+                    $log.log("Dal delete");
                     $http.delete(apiPath + itemToDelete.id).then(function () {
                         deferred.resolve();
                     }, function (e) {
