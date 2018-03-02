@@ -1,6 +1,6 @@
 (function() {
 
-    var CreateController =  function(Dal, $log) {
+    var CreateController =  function(AccountDal, $log) {
         
     	$log.log("createController Created");
     	var vm = this;
@@ -11,7 +11,7 @@
             $log.log(newAccount);
             var accounToJson = JSON.stringify(newAccount);
             $log.log(accounToJson);
-            Dal.saveAccount(newAccount).then(function (results) {
+            AccountDal.saveAccount(newAccount).then(function (results) {
                 vm.accountAddMessage  = results;
                 $state.go('accounts');
             }, function (error) {
@@ -22,5 +22,5 @@
             
     };
 
-    angular.module('accountApp').controller('createController', ['Dal','$log', CreateController]);
+    angular.module('accountApp').controller('createController', ['AccountDal','$log', CreateController]);
 }());
