@@ -10,7 +10,7 @@
         };
 
         this.saveAccount = function (accountToSave) {
-        	$log.log("AccountDal saveAccount");
+        	$log.log("AccountDal saveAccount:" + JSON.stringify(accountToSave));
             return dal.http.POST("rest/account/json", accountToSave);
         };
 

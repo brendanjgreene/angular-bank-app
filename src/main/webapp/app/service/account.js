@@ -11,9 +11,9 @@
         	return accountDal.getAccounts();
         };
         
-        this.saveAccount = function(){
-        	$log.log("AccountService saveAccount");
-        	return accountDal.saveAccount();
+        this.saveAccount = function(accountToSave){
+        	$log.log("AccountService saveAccount: " + JSON.stringify(accountToSave));
+        	return accountDal.saveAccount(accountToSave);
         };
         
     }

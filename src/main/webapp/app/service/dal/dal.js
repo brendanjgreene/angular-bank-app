@@ -21,6 +21,7 @@
                 POST: function (apiPath, itemToSave) {
                     var deferred = $q.defer();
                     $log.log("Dal post");
+                    $log.log("item to be saved" + JSON.stringify(itemToSave));
                     $http(
                         {
                             method: "post",
