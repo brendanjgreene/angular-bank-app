@@ -8,12 +8,7 @@
     	var vm = this;
     	vm.test = "test";
     	vm.upAccount=$stateParams.account,
-    	/*vm.Id=$stateParams.accountId;
-    vm.First=$stateParams.accountFirstName;
-    vm.Last=$stateParams.accountSecondName;
-    vm.Number=$stateParams.accountNumber;*/
     	
-       
     vm.updateAccount = function(upAccount) {
 	   		$log.log("UpdateController updateAccount");
 	   		$log.log("UpdateController the upAccount is :" + JSON.stringify(upAccount));
