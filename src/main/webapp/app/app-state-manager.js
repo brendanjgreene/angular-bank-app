@@ -17,6 +17,7 @@
         }).state("update", {
             url: "/account/update",
             params: {
+            		account: null,
                 accountId: null,
                 accountFirstName: null,
                 accountSecondName: null,

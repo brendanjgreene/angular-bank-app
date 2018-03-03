@@ -30,6 +30,7 @@
        vm.updateAccount = function(account) {
     	   		$log.log("AccountController updateAccount");
     	   		$state.go("update", {
+    	   			account: account,
     				accountId : account.id,
     				accountFirstName : account.firstName,
     				accountSecondName : account.secondName,
