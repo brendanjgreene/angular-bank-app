@@ -14,10 +14,10 @@
         }).state("add-account", {
             url: "/account/add",
             templateUrl: "app/feature/create-account/create-account.html"
-        }).state("update-account", {
+        }).state("update", {
             url: "/account/update",
-            templateUrl: "app/feature/account/update.html"
-        }).state("delete-account", {
+            templateUrl: "app/feature/update-account/update.html"
+        }).state("delete", {
             url: "/account/delete",
             templateUrl: "app/feature/account/delete.html"
         })
