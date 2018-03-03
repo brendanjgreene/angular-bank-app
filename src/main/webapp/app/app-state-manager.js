@@ -9,11 +9,24 @@
             url: "/dashboard",
             templateUrl: "app/feature/dashboard/dashboard.html"
         }).state("account", {
-                url: "/account",
-                templateUrl: "app/feature/account/account.html"
+            url: "/account",
+            templateUrl: "app/feature/account/account.html"
         }).state("add-account", {
             url: "/account/add",
             templateUrl: "app/feature/create-account/create-account.html"
-    })
+        }).state("update", {
+            url: "/account/update",
+            params: {
+            		account: null,
+                accountId: null,
+                accountFirstName: null,
+                accountSecondName: null,
+                accountNumber: null,
+            },
+            templateUrl: "app/feature/update-account/update.html"
+        }).state("delete", {
+            url: "/account/delete",
+            templateUrl: "app/feature/account/delete.html"
+        })
     });
 }());

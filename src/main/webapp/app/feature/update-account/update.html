@@ -1,0 +1,24 @@
+<div class="panel panel-default" ng-controller="updateController as upCtrl">
+	    <div class="panel-heading">Update Account Page</div>
+	    <div class="panel-body">
+   		<h1>You are updating the account with the id of : {{upCtrl.upAccount.id}}</h1>
+   		
+    <form role="form">
+                <div class="form-group">
+                    <label>First Name:</label>
+                    <input class="form-control" ng-model="upCtrl.upAccount.firstName">
+                </div>
+                <div class="form-group">
+                    <label>Second Name:</label>
+                    <input class="form-control" ng-model="upCtrl.upAccount.secondName">
+                </div>
+                <div class="form-group">
+                    <label>Account Number:</label>
+                    <input class="form-control" ng-model="upCtrl.upAccount.accountNumber">
+                </div>
+            
+                <button type="submit" class="btn btn-primary btn-lg" ng-click="upCtrl.updateAccount(upCtrl.upAccount)">Update Account</button>
+            </form>
+   		
+        </div>
+	</div>
