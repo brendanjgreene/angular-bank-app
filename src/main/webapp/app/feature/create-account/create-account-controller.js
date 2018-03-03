@@ -6,7 +6,6 @@
         
     	$log.log("createController Created");
     	var vm = this;
-        vm.test = "creat page working"
         
         vm.addAccount = function(newAccount) {
             $log.log("The account to add is: " + newAccount);

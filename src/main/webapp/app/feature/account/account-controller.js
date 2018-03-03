@@ -2,7 +2,7 @@
 
 (function() {
 
-    var AccountController =  function(accountService, $log) {
+    var AccountController =  function(accountService, $log, $location, $window) {
         
     	$log.log("AccountController Created");
     	var vm = this;
@@ -26,8 +26,21 @@
        }
        
        init();
+       
+       vm.updateAccount = function(account) {
+    	   		$log.log("AccountController updateAccount")
+            $location.path("/account");
+            $window.location.reload();
+           
+       };
+       vm.deleteAccount = function() {
+	   		$log.log("AccountController deleteAccount")
+	   		$location.path("/account");
+	   		$window.location.reload();
+      
+       };
             
     };
 
-    angular.module('accountApp').controller('accountController', ['accountService','$log', AccountController]);
+    angular.module('accountApp').controller('accountController', ['accountService','$log','$location','$window', AccountController]);
 }());

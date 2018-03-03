@@ -1,0 +1,24 @@
+<div class="panel panel-default" ng-controller="accountController as accountCtrl">
+	    <div class="panel-heading">Update Account Page</div>
+	    <div class="panel-body">
+   		
+   		
+    <form role="form">
+                <div class="form-group">
+                    <label>First Name:</label>
+                    <input class="form-control" ng-model="account.firstName" required>
+                </div>
+                <div class="form-group">
+                    <label>Second Name:</label>
+                    <input class="form-control" ng-model="account.secondName" required>
+                </div>
+                <div class="form-group">
+                    <label>Account Number:</label>
+                    <input class="form-control" ng-model="account.accountNumber" required>
+                </div>
+            
+                <button type="submit" class="btn btn-primary btn-lg" ng-click="accountCtrl.updateAccount(account)">Update Account</button>
+            </form>
+   		
+        </div>
+	</div>
