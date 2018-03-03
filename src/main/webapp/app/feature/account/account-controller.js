@@ -2,7 +2,7 @@
 
 (function() {
 
-    var AccountController =  function(accountService, $log, $location, $window) {
+    var AccountController =  function(accountService, $log, $location, $window, $state) {
         
     	$log.log("AccountController Created");
     	var vm = this;
@@ -28,19 +28,24 @@
        init();
        
        vm.updateAccount = function(account) {
-    	   		$log.log("AccountController updateAccount")
-            $location.path("/account");
-            $window.location.reload();
+    	   		$log.log("AccountController updateAccount");
+    	   		$state.go("update", {
+    				accountId : account.id,
+    				accountFirstName : account.firstName,
+    				accountSecondName : account.secondName,
+    				accountNumber : account.accountNumber
+    			});
            
        };
-       vm.deleteAccount = function() {
-	   		$log.log("AccountController deleteAccount")
-	   		$location.path("/account");
+       vm.deleteAccount = function(id) {
+    	   
+	   		$log.log("AccountController deleteAccount");
+	   		$location.path("/account/delete");
 	   		$window.location.reload();
       
        };
             
     };
 
-    angular.module('accountApp').controller('accountController', ['accountService','$log','$location','$window', AccountController]);
+    angular.module('accountApp').controller('accountController', ['accountService','$log','$location','$window', '$state', AccountController]);
 }());

@@ -1,23 +1,23 @@
 <div class="panel panel-default" ng-controller="updateController as upCtrl">
 	    <div class="panel-heading">Update Account Page</div>
 	    <div class="panel-body">
-   		{{5+5}}{{upCtrl.test}}
+   		<h1>You are updating the account with the id of : {{upCtrl.Id}}</h1>
    		
     <form role="form">
                 <div class="form-group">
                     <label>First Name:</label>
-                    <input class="form-control" ng-model="account.firstName" required>
+                    <input class="form-control" ng-model="upCtrl.First">
                 </div>
                 <div class="form-group">
                     <label>Second Name:</label>
-                    <input class="form-control" ng-model="account.secondName" required>
+                    <input class="form-control" ng-model="upCtrl.Last">
                 </div>
                 <div class="form-group">
                     <label>Account Number:</label>
-                    <input class="form-control" ng-model="account.accountNumber" required>
+                    <input class="form-control" ng-model="upCtrl.Number">
                 </div>
             
-                <button type="submit" class="btn btn-primary btn-lg">Update Account</button>
+                <button type="submit" class="btn btn-primary btn-lg" ng-click="upCtrl.updateAccount()">Update Account</button>
             </form>
    		
         </div>

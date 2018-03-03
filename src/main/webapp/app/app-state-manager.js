@@ -16,6 +16,12 @@
             templateUrl: "app/feature/create-account/create-account.html"
         }).state("update", {
             url: "/account/update",
+            params: {
+                accountId: null,
+                accountFirstName: null,
+                accountSecondName: null,
+                accountNumber: null,
+            },
             templateUrl: "app/feature/update-account/update.html"
         }).state("delete", {
             url: "/account/delete",

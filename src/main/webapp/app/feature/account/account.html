@@ -16,8 +16,8 @@
         			<td>{{account.firstName}}</td>
         			<td>{{account.secondName}}</td>
         			<td>{{account.accountNumber}}</td>
-        			<td><a class="btn btn-info"><i class="fa fa-pencil-square-o"></i></a></td>
-        			<td><a class="btn btn-primary"><i class="fa fa-trash-o"></i></a></td>
+        			<td><a class="btn btn-info" ng-click="accountCtrl.updateAccount(account)"><i class="fa fa-pencil-square-o"></i></a></td>
+        			<td><a class="btn btn-primary" ng-click="accountCtrl.deleteAccount(account.id)"><i class="fa fa-trash-o"></i></a></td>
         		</tr>
         	</table>
         </div>
