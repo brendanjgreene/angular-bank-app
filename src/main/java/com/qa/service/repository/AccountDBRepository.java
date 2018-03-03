@@ -72,4 +72,10 @@ public class AccountDBRepository implements AccountRepository {
 		this.util = util;
 	}
 
+	@Override
+	public String updateAccount(String account) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

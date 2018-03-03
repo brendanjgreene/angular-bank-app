@@ -16,12 +16,12 @@
 
         this.updateAccount = function (accountToUpdate) {
         	$log.log("AccountDal updateAccount");
-            return dal.http.PUT("rest/account/json/", accountToUpdate);
+            return dal.http.PUT("rest/account/json", accountToUpdate);
         };
 
         this.deleteAccount = function (accountToDelete) {
         	$log.log("AccountDal deleteAccount");
-            return dal.http.DELETE("/rest/account/json/", accountToDelete);
+            return dal.http.DELETE("rest/account/json", accountToDelete);
         };
     }
     
