@@ -18,7 +18,7 @@
         	accountService.getAccounts().then(function (results) {
            	vm.accounts = results;
            	$log.log("In the account controller the value of the result promise is ");
-        	$log.log(JSON.stringify(vm.accounts));
+           	$log.log(JSON.stringify(vm.accounts));
             }, function (error) {
                 vm.error = true;
                 vm.errorMessage = error;
