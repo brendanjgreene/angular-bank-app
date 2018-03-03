@@ -74,6 +74,8 @@ public class AccountDBRepository implements AccountRepository {
 
 	@Override
 	public String updateAccount(String account) {
+
+		LOGGER.info("AccountDBRepository updateAccount");
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -66,6 +66,8 @@ public class AccountMapRepository implements AccountRepository {
 
 	@Override
 	public String updateAccount(String account) {
+
+		LOGGER.info("AccountMapRepository + updateAccountMap");
 		// TODO Auto-generated method stub
 		return null;
 	}
