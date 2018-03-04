@@ -2,7 +2,7 @@
 
 (function() {
 
-    var CreateController =  function(accountService, $log, $location, $window) {
+    var CreateController =  function(accountService, $log, $state) {
         
     	$log.log("createController Created");
     	var vm = this;
@@ -11,10 +11,9 @@
             $log.log("The account to add is: ");
             $log.log(JSON.stringify(newAccount));
             accountService.saveAccount(newAccount).then(function (results) {
-            	$log.log("hello");
                 vm.accountAddMessage = results;
-                $location.path("/account");
-                $window.location.reload();
+                $log.log("account add message"+JSON.stringify(vm.accountAddMessage));
+                $state.go("account");
             }, function (error) {
                 vm.error = true;
                 vm.errorMessage = error;
@@ -23,5 +22,5 @@
             
     };
 
-    angular.module('accountApp').controller('createController', ['accountService','$log','$location', '$window', CreateController]);
+    angular.module('accountApp').controller('createController', ['accountService','$log','$state', CreateController]);
 }());

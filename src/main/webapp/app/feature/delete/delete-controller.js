@@ -2,7 +2,7 @@
 
 (function() {
 
-    var DeleteController =  function(accountService, $log, $location, $window, $stateParams) {
+    var DeleteController =  function(accountService, $log, $location, $window, $stateParams, $state) {
         
     	$log.log("deleteController Created");
     	var vm = this;
@@ -14,8 +14,8 @@
 	   		$log.log("DeleteController the Id of the account to be deleted is :" + vm.delAccount.id);
 	   		accountService.deleteAccount(vm.delAccount).then(function (results){
 	   			vm.accountDeleteMessage = results;
-	   			$location.path("/account");
-	   			$window.location.reload();
+	   			$log.log("accountDeleteMessage"+ JSON.stringify(vm.accountDeleteMessage));
+	   			$state.go("account");
 	   		}, function (error){
 	   			vm.error = true;
 	   			vm.errorMessage = error;
@@ -25,5 +25,5 @@
         
     };
 
-    angular.module('accountApp').controller('deleteController', ['accountService','$log','$location', '$window', '$stateParams', DeleteController]);
+    angular.module('accountApp').controller('deleteController', ['accountService','$log','$location', '$window', '$stateParams','$state', DeleteController]);
 }());
