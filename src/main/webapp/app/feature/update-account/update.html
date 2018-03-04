@@ -3,21 +3,24 @@
 	    <div class="panel-body">
    		<h1>You are updating the account with the id of : {{upCtrl.upAccount.id}}</h1>
    		
-    <form role="form">
+    <form novalidate ng-submit="upCtrl.updateAccount(upCtrl.upAccount)" name="myForm">
                 <div class="form-group">
                     <label>First Name:</label>
-                    <input class="form-control" ng-model="upCtrl.upAccount.firstName">
+                    <input class="form-control" name="first" ng-model="upCtrl.upAccount.firstName" ng-not-empty="true" ng-required="true" ng-minlength="2" maxlength="80">
+                    <span style="color:red;" ng-show="myForm.first.$touched && myForm.first.$invalid">A First Name between 2 and 80 characters is required</span>
                 </div>
                 <div class="form-group">
                     <label>Second Name:</label>
-                    <input class="form-control" ng-model="upCtrl.upAccount.secondName">
+                    <input class="form-control" name="second" ng-model="upCtrl.upAccount.secondName" ng-not-empty="true" ng-required="true" ng-minlength="2" maxlength="80">
+                    <span style="color:red;" ng-show="myForm.second.$touched && myForm.second.$invalid">A Second Name between 2 and 80 characters is required</span>
                 </div>
                 <div class="form-group">
                     <label>Account Number:</label>
-                    <input class="form-control" ng-model="upCtrl.upAccount.accountNumber">
+                    <input class="form-control" name="num" ng-model="upCtrl.upAccount.accountNumber" ng-not-empty="true" ng-required="true" ng-minlength="4" ng-maxlength="10">
+                    <span style="color:red;" ng-show="myForm.num.$touched && myForm.num.$invalid">An Account number betwee 4 and 10 digits is required</span>
                 </div>
             
-                <button type="submit" class="btn btn-primary btn-lg" ng-click="upCtrl.updateAccount(upCtrl.upAccount)">Update Account</button>
+                <button ng-disabled="myForm.$invalid" type="submit" id="submit" class="btn btn-primary btn-lg" value="Update Account">Update Account</button>
             </form>
    		
         </div>

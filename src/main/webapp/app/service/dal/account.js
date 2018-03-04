@@ -21,7 +21,7 @@
 
         this.deleteAccount = function (accountToDelete) {
         	$log.log("AccountDal deleteAccount");
-            return dal.http.DELETE("rest/account/json", accountToDelete);
+            return dal.http.DELETE("rest/account/json/", accountToDelete);
         };
     }
     

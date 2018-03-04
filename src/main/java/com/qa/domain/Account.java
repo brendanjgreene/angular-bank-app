@@ -22,7 +22,7 @@ public class Account {
 	private String firstName;
 	@Size(min = 2, max = 80)
 	private String secondName;
-	@Size(min = 4, max = 4)
+	@Size(min = 4, max = 10)
 	private String accountNumber;
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)

@@ -4,7 +4,7 @@
    		{{accountCtrl.test}}
    		<div ng-hide="accountCtrl.isHidden">
         	<h3><span>Accounts table</span></h3>
-        	<table class="table">
+        	<table class="table table-striped">
         		<tr>
         			<th>{{'first_name' | uppercase}}</th>
         			<th>{{'surname' | uppercase}}</th>
@@ -17,10 +17,10 @@
         			<td>{{account.secondName}}</td>
         			<td>{{account.accountNumber}}</td>
         			<td><a class="btn btn-info" ng-click="accountCtrl.updateAccount(account)"><i class="fa fa-pencil-square-o"></i></a></td>
-        			<td><a class="btn btn-primary" ng-click="accountCtrl.deleteAccount(account.id)"><i class="fa fa-trash-o"></i></a></td>
+        			<td><a class="btn btn-primary" ng-click="accountCtrl.deleteAccount(account)"><i class="fa fa-trash-o"></i></a></td>
         		</tr>
         	</table>
         </div>
-        <button class="btn"ng-click="accountCtrl.hideTable()">Hide accounts</button>
+        <button class="btn btn-info" ng-click="accountCtrl.hideTable()"><span ng-show="accountCtrl.isHidden">Show Accounts</span><span ng-hide="accountCtrl.isHidden">Hide accounts</span></button>
 	</div>
 </div>

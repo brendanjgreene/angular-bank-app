@@ -31,18 +31,15 @@
     	   		$log.log("AccountController updateAccount");
     	   		$state.go("update", {
     	   			account: account,
-    				accountId : account.id,
-    				accountFirstName : account.firstName,
-    				accountSecondName : account.secondName,
-    				accountNumber : account.accountNumber
     			});
            
        };
-       vm.deleteAccount = function(id) {
+       vm.deleteAccount = function(account) {
     	   
 	   		$log.log("AccountController deleteAccount");
-	   		$location.path("/account/delete");
-	   		$window.location.reload();
+	   		$state.go("delete", {
+	   			account: account,
+			});
       
        };
             
