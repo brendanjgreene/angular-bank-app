@@ -17,16 +17,15 @@
         }).state("update", {
             url: "/account/update",
             params: {
-            		account: null,
-                accountId: null,
-                accountFirstName: null,
-                accountSecondName: null,
-                accountNumber: null,
+            		account: null
             },
             templateUrl: "app/feature/update-account/update.html"
         }).state("delete", {
             url: "/account/delete",
-            templateUrl: "app/feature/account/delete.html"
+            params: {
+        			account: null
+            },
+            templateUrl: "app/feature/delete/delete.html"
         })
     });
 }());

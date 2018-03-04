@@ -20,6 +20,11 @@
         	$log.log("AccountService updateAccount: " + JSON.stringify(accountToUpdate));
         	return accountDal.updateAccount(accountToUpdate);
         };
+        
+        this.deleteAccount = function(delAccount){
+        	$log.log("AccountService deleteAccount: " + JSON.stringify(delAccount));
+        	return accountDal.deleteAccount(delAccount);
+        };
     }
     
     angular.module("accountApp").service("accountService", ['$log','accountDal', AccountService]);
