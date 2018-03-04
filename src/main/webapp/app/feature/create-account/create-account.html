@@ -19,7 +19,7 @@
                     <input class="form-control" name="num" ng-model="account.accountNumber" ng-not-empty="true" ng-required="true" ng-minlength="4" ng-maxlength="10">
                     <span style="color:red;" ng-show="myForm.num.$touched && myForm.num.$invalid">An Account number between 4 and 10 digits is required</span>
                 </div>
-                <button ng-disabled="myForm.$invalid" type="submit" id="submit" class="btn btn-primary btn-lg" value="Create Account">Create Account</button>
+                <button ng-disabled="myForm.$invalid" type="submit" class="btn btn-primary btn-lg" value="Create Account">Create Account</button>
             </form>
    		
         </div>
