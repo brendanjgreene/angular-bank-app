@@ -3,15 +3,15 @@
 	    <div class="panel-body">
    		<h1>You are updating the account with the id of : {{upCtrl.upAccount.id}}</h1>
    		
-    <form novalidate ng-submit="upCtrl.updateAccount(upCtrl.upAccount)" name="myForm">
+    			<form novalidate ng-submit="upCtrl.updateAccount(upCtrl.upAccount)" name="myForm">
                 <div class="form-group">
                     <label>First Name:</label>
-                    <input class="form-control" name="first" ng-model="upCtrl.upAccount.firstName" ng-not-empty="true" ng-required="true" ng-minlength="2" maxlength="80">
+                    <input class="form-control" name="first" ng-model="upCtrl.upAccount.firstName" ng-not-empty="true" ng-required="true" ng-minlength="2" ng-maxlength="80">
                     <span style="color:red;" ng-show="myForm.first.$touched && myForm.first.$invalid">A First Name between 2 and 80 characters is required</span>
                 </div>
                 <div class="form-group">
                     <label>Second Name:</label>
-                    <input class="form-control" name="second" ng-model="upCtrl.upAccount.secondName" ng-not-empty="true" ng-required="true" ng-minlength="2" maxlength="80">
+                    <input class="form-control" name="second" ng-model="upCtrl.upAccount.secondName" ng-not-empty="true" ng-required="true" ng-minlength="2" ng-maxlength="80">
                     <span style="color:red;" ng-show="myForm.second.$touched && myForm.second.$invalid">A Second Name between 2 and 80 characters is required</span>
                 </div>
                 <div class="form-group">
