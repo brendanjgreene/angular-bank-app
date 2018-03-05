@@ -1,29 +1,24 @@
 <div class="panel panel-default" ng-controller="createController as createCtrl">
-	    <div class="panel-heading">Create Accounts page</div>
-	    <div class="panel-body">
-   		
-   	
-            <form novalidate ng-submit="createCtrl.addAccount(account)" name="myForm">
-                <div class="form-group">
-                    <label>First Name:</label>
-                    <input class="form-control" name="first" ng-model="account.firstName" ng-not-empty="true" ng-required="true" ng-minlength="2" ng-maxlength="80">
-                    <span style="color:red;" ng-show="myForm.first.$touched && myForm.first.$invalid">A First Name between 2 and 80 characters is required</span>
-                </div>
-                <div class="form-group">
-                    <label>Second Name:</label>
-                    <input class="form-control" name="second" ng-model="account.secondName" ng-not-empty="true" ng-required="true" ng-minlength="2" ng-maxlength="80">
-                    <span style="color:red;" ng-show="myForm.second.$touched && myForm.second.$invalid">A Second Name between 2 and 80 characters is required</span>
-                </div>
-                <div class="form-group">
-                    <label>Account Number:</label>
-                    <input class="form-control" name="num" ng-model="account.accountNumber" ng-not-empty="true" ng-required="true" ng-minlength="4" ng-maxlength="10">
-                    <span style="color:red;" ng-show="myForm.num.$touched && myForm.num.$invalid">An Account number between 4 and 10 digits is required</span>
-                </div>
-                <button ng-disabled="myForm.$invalid" type="submit" class="btn btn-primary btn-lg" value="Create Account">Create Account</button>
-                <button class="btn btn-danger btn-md pull-right" ui-sref="account">Cancel</button>
-            </form>
-   		
-        </div>
-   		
-        
-	</div>
+    <div class="panel-heading">Create Accounts page</div>
+    <div class="panel-body">
+        <form novalidate ng-submit="createCtrl.addAccount(account)" name="myForm">
+            <div class="form-group">
+                <label>First Name:</label>
+                <input class="form-control" name="first" ng-model="account.firstName" ng-not-empty="true" ng-required="true" ng-minlength="2" maxlength="80">
+                <span style="color:red;" ng-show="myForm.first.$touched && myForm.first.$invalid">Name Must be at least 2 Characters</span>
+            </div>
+            <div class="form-group">
+                <label>Second Name:</label>
+                <input class="form-control" name="second" ng-model="account.secondName" ng-not-empty="true" ng-required="true" ng-minlength="2" maxlength="80">
+                <span style="color:red;" ng-show="myForm.second.$touched && myForm.second.$invalid">Second Name Must be at least 2 Characters</span>
+            </div>
+            <div class="form-group">
+                <label>Account Number:</label>
+                <input class="form-control" name="num" ng-model="account.accountNumber" ng-not-empty="true" ng-required="true" ng-minlength="4" maxlength="10">
+                <span style="color:red;" ng-show="myForm.num.$touched && myForm.num.$invalid">Account number Must be at least 4 numbers</span>
+            </div>
+            <button ng-disabled="myForm.$invalid" type="submit" class="btn btn-primary btn-lg" value="Create Account">Create Account</button>
+            <button class="btn btn-danger btn-md pull-right" ui-sref="account">Cancel</button>
+        </form>
+    </div>
+</div>

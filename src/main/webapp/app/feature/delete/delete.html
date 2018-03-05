@@ -1,19 +1,14 @@
 <div class="panel panel-default" ng-controller="deleteController as delCtrl">
-	    <div class="panel-heading">Delete Account Page</div>
-	    <div class="panel-body">
-   		
-   		
-    <form role="form">
-                <h1>Are you sure you want to delete This Account:</h1>
-                <h3>ID: {{delCtrl.delAccount.id}}</h3>
-                <h3>Name: {{delCtrl.delAccount.firstName}}  {{delCtrl.delAccount.secondName}}</h3>
-                <h3>Account Number: {{delCtrl.delAccount.accountNumber}}</h3>
-                <h3><strong>This can not be UNDONE, this account and ALL associated Transactions will be irretrievable!</strong></h3>
-                
-            
-                <button type="submit" class="btn btn-warning btn-lg" ng-click="delCtrl.deleteAccount()">Delete Account</button>
-                <button class="btn btn-danger btn-md pull-right" ui-sref="account">Cancel</button>
-            </form>
-   		
-        </div>
-	</div>
+    <div class="panel-heading">Delete Account Page</div>
+    <div class="panel-body">
+        <form role="form">
+            <h1>Are you sure you want to delete This Account:</h1>
+            <h3>ID: {{delCtrl.delAccount.id}}</h3>
+            <h3>Name: {{delCtrl.delAccount.firstName}}  {{delCtrl.delAccount.secondName}}</h3>
+            <h3>Account Number: {{delCtrl.delAccount.accountNumber}}</h3>
+            <h3><strong>This can not be UNDONE, this account and ALL associated Transactions will be irretrievable!</strong></h3>
+            <button type="submit" class="btn btn-warning btn-lg" ng-click="delCtrl.deleteAccount()">Delete Account</button>
+            <button class="btn btn-danger btn-md pull-right" ui-sref="account">Cancel</button>
+        </form>
+    </div>
+</div>

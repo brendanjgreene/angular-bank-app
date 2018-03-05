@@ -1,26 +1,29 @@
 <div class="panel panel-default" ng-controller="accountController as accountCtrl">
-	    <div class="panel-heading">Accounts page</div>
-	    <div class="panel-body">
-   		{{accountCtrl.test}}
-   		<div ng-hide="accountCtrl.isHidden">
-        	<h3><span>Accounts table</span></h3>
-        	<table class="table table-striped">
-        		<tr>
-        			<th>{{'first_name' | uppercase}}</th>
-        			<th>{{'surname' | uppercase}}</th>
-        			<th>{{'account_number' | uppercase}}</th>
-        			<th>Edit</th>
-        			<th>Delete</th>
-        		</tr>
-        		<tr ng-repeat="account in accountCtrl.accounts">
-        			<td>{{account.firstName}}</td>
-        			<td>{{account.secondName}}</td>
-        			<td>{{account.accountNumber}}</td>
-        			<td><a class="btn btn-info" ng-click="accountCtrl.updateAccount(account)"><i class="fa fa-pencil-square-o"></i></a></td>
-        			<td><a class="btn btn-primary" ng-click="accountCtrl.deleteAccount(account)"><i class="fa fa-trash-o"></i></a></td>
-        		</tr>
-        	</table>
+    <div class="panel-heading">Accounts page</div>
+    <div class="panel-body">
+        {{accountCtrl.test}}
+        <div ng-hide="accountCtrl.isHidden">
+            <h3><span>Accounts table</span></h3>
+            <table class="table table-striped">
+                <tr>
+                    <th>{{'first_name' | uppercase}}</th>
+                    <th>{{'surname' | uppercase}}</th>
+                    <th>{{'account_number' | uppercase}}</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                <tr ng-repeat="account in accountCtrl.accounts">
+                    <td>{{account.firstName}}</td>
+                    <td>{{account.secondName}}</td>
+                    <td>{{account.accountNumber}}</td>
+                    <td><a class="btn btn-info" ng-click="accountCtrl.updateAccount(account)"><i class="fa fa-pencil-square-o"></i></a></td>
+                    <td><a class="btn btn-primary" ng-click="accountCtrl.deleteAccount(account)"><i class="fa fa-trash-o"></i></a></td>
+                </tr>
+            </table>
         </div>
-        <button class="btn btn-info" ng-click="accountCtrl.hideTable()"><span ng-show="accountCtrl.isHidden">Show Accounts</span><span ng-hide="accountCtrl.isHidden">Hide accounts</span></button>
-	</div>
+        <div class="btn-group">
+            <button class="btn btn-info" ng-click="accountCtrl.hideTable()"><span ng-show="accountCtrl.isHidden">Show Accounts</span><span ng-hide="accountCtrl.isHidden">Hide accounts</span></button>
+            <button class="btn btn-success" ui-sref="add-account">Add Account</button>
+        </div>
+    </div>
 </div>
